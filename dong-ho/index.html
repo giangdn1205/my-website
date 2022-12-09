@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng hồ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            color: white;
+            transition: 0.8s;
+        }
+        .main {
+            margin-top: 23vh;
+            text-align: center;
+            font-size: 8.5em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .dark-mode {
+            background-color: white;
+            color: black;
+            transition: 0.8s;
+        }
+        .mode-1 {
+            background-color: #fa3e45;
+            color: #fce77d;
+            transition: 0.8s;
+        }
+        .mode-2 {
+            background-color: #292826;
+            color: #f9d342;
+            transition: 0.8s;
+        }
+        .mode-3 {
+            background-color: #3d155f;
+            color: #df678c;
+            transition: 0.8s;
+        }
+        .mode-4 {
+            background-color: #4a274f;
+            color: #f0a07c;
+            transition: 0.8s;
+        }
+        .mode-5 {
+            background-color: #2f3c7e;
+            color: #fbeaeb;
+            transition: 0.8s;
+        }
+        .mode-6 {
+            background-color: #fbeaeb;
+            color: #2f3c7e;
+            transition: 0.8s;
+        }
+        .mode-7 {
+            background-color: #8aaae5;
+            color: #ffffff;
+            transition: 0.8s;
+        }
+        .mode-8 {
+            background-color: #ffe042;
+            color: #e75a19;
+            transition: 0.8s;
+        }
+        .mode-9 {
+            background-color: black;
+            color: #d54f31;
+            transition: 0.8s;
+        }
+        .mode-0 {
+            background-color: black;
+            color: white;
+            transition: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2 id="time"></h2>
+    </div>
+    <script>
+        function clock() {
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (hour < 10) hour = '0' + hour;
+            if (minute < 10) minute = '0' + minute;
+            if (second < 10) second = '0' + second;
+            var time = hour + ':' + minute + ':' + second;
+            document.getElementById("time").innerHTML = time;
+            setTimeout("clock()", 1000);
+        }
+        clock()
+        document.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            if (e.key.toLowerCase() === 'd' && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+            if (e.key == 1 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-1");
+            }
+            if (e.key == 2 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-2");
+            }
+            if (e.key == 3 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-3");
+            }
+            if (e.key == 4 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-4");
+            }
+            if (e.key == 5 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-5");
+            }
+            if (e.key == 6 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-6");
+            }
+            if (e.key == 7 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-7");
+            }
+            if (e.key == 8 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-8");
+            }
+            if (e.key == 9 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-9");
+            }
+            if (e.key == 0 && e.ctrlKey) {
+                var element = document.body;
+                element.classList.toggle("mode-0");
+            }
+        });
+    </script>
+</body>
+</html>
